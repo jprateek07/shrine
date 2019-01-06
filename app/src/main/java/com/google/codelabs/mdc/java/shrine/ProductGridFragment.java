@@ -3,6 +3,7 @@ package com.google.codelabs.mdc.java.shrine;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.bottomappbar.BottomAppBar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 public class ProductGridFragment extends Fragment {
 
+    BottomAppBar bottomAppBar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,9 @@ public class ProductGridFragment extends Fragment {
 
         setUpToolbar(view);
 
+        bottomAppBar = view.findViewById(R.id.bottom_appbar);
 
+        bottomAppBar.replaceMenu(R.menu.bottom_navigation_main);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             view.findViewById(R.id.product_grid).setBackground(getContext().getDrawable(R.drawable.shr_product_grid_background_shape));
         }
