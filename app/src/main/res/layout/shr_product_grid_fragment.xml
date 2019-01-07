@@ -38,7 +38,7 @@
             app:title="@string/shr_app_name" />
     </android.support.design.widget.AppBarLayout>
 
-        <android.support.design.widget.CoordinatorLayout
+    <android.support.design.widget.CoordinatorLayout
             android:id="@+id/product_grid"
             android:layout_marginTop="56dp"
             android:layout_width="match_parent"
@@ -46,8 +46,73 @@
             android:background="@color/productGridBackgroundColor"
             android:elevation="8dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="56dp"
+            android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="30dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Medical Department"/>
+        </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gridCategory"
+                    >
 
-            <android.support.design.bottomappbar.BottomAppBar
+                </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"></LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Top Hospital"/>
+            </LinearLayout>
+
+           <android.support.v7.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/hospitallist" />
+            <LinearLayout
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"></LinearLayout>
+
+
+
+
+       </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.bottomappbar.BottomAppBar
                 android:id="@+id/bottom_appbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,14 +120,14 @@
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:backgroundTint="@color/colorPrimary"
-                app:fabCradleVerticalOffset="12dp"/>
+                app:fabCradleVerticalOffset="15dp"/>
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
-                android:src="@drawable/shr_search"
+                app:srcCompat="@drawable/shr_search"
                 app:layout_anchor="@+id/bottom_appbar"/>
 
         </android.support.design.widget.CoordinatorLayout>
