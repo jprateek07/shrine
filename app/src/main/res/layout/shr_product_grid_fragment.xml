@@ -48,7 +48,7 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="50dp"
             android:layout_height="wrap_content">
        <LinearLayout
            android:layout_width="match_parent"
@@ -57,38 +57,47 @@
         <LinearLayout
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:orientation="horizontal">
             <TextView
+                android:layout_gravity="center_vertical"
                 android:layout_marginTop="3dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="35dp"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Medical Department"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/gray" />
+
         </LinearLayout>
                 <android.support.v7.widget.RecyclerView
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/gridCategory"
-                    >
+                    android:id="@+id/gridCategory">
 
                 </android.support.v7.widget.RecyclerView>
-            <LinearLayout
-                android:layout_margin="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray"></LinearLayout>
+
+           <LinearLayout
+           android:layout_marginTop="5dp"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@color/gray" />
 
             <LinearLayout
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:orientation="horizontal">
                 <TextView
-                    android:layout_marginLeft="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="35dp"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -100,35 +109,87 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/hospitallist" />
-            <LinearLayout
-                android:layout_margin="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray"></LinearLayout>
+
+           <LinearLayout
+               android:layout_margin="5dp"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@color/gray" />
+
+
+           <LinearLayout
+               android:padding="3dp"
+               android:background="#efeeef"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:orientation="horizontal">
+               <TextView
+                   android:textSize="16sp"
+                   android:layout_gravity="center_vertical"
+                   android:layout_marginLeft="35dp"
+                   android:textColor="@android:color/black"
+                   android:textStyle="bold"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:text="Gets Idoms "/>
+           </LinearLayout>
+
+           <android.support.v7.widget.RecyclerView
+
+               android:background="#efeeef"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/Slider" />
 
 
 
+           <LinearLayout
+               android:layout_marginTop="5dp"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:orientation="horizontal">
+               <TextView android:layout_gravity="center_vertical"
+                   android:layout_marginTop="3dp"
+                   android:textSize="16sp"
+                   android:layout_marginLeft="35dp"
+                   android:textColor="@android:color/black"
+                   android:textStyle="bold"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:text=" Top Rated Doctors  "/>
+           </LinearLayout>
+
+           <android.support.v7.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/doctorlist" />
+
+           <LinearLayout
+               android:layout_margin="5dp"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@color/gray" />
 
        </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
 
-    <android.support.design.bottomappbar.BottomAppBar
+    <com.luseen.spacenavigation.SpaceNavigationView
                 android:id="@+id/bottom_appbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                app:active_item_color="@android:color/black"
+                app:centre_button_color="@color/colorAccent"
+                app:inactive_item_color="@android:color/white"
+                 app:space_background_color="#d9d9d9"
+                app:centre_button_icon="@drawable/alarm"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:backgroundTint="@color/colorPrimary"
-                app:fabCradleVerticalOffset="15dp"/>
+                >
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
-                app:srcCompat="@drawable/shr_search"
-                app:layout_anchor="@+id/bottom_appbar"/>
+    </com.luseen.spacenavigation.SpaceNavigationView>
+
 
         </android.support.design.widget.CoordinatorLayout>
 

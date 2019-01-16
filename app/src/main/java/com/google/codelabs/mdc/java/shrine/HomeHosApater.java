@@ -38,7 +38,7 @@ public class HomeHosApater extends RecyclerView.Adapter<HomeHosApater.ViewHolder
         viewHolder.name.setText(android.get(i).getName());
         Log.i("Image",android.get(i).getImg());
         viewHolder.rate.setRating(android.get(i).getRating());
-        viewHolder.distance.setText(android.get(i).getKm()+"Km");
+        viewHolder.distance.setText(android.get(i).getKm());
         Glide.with(context).load(android.get(i).getImg()).into(viewHolder.img_android);
     }
 
